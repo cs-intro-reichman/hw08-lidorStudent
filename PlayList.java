@@ -68,7 +68,11 @@ class PlayList {
     /** Returns the total duration (in seconds) of all the tracks in this list.*/
     public int totalDuration() {
         //// replace the following statement with your code
-        return 0;
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            count += tracks[i].getDuration();
+        }
+        return count;
     }
 
     /** Returns the index of the track with the given title in this list.
