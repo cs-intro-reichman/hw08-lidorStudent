@@ -36,6 +36,11 @@ class PlayList {
      *  Otherwise, appends the track and returns true. */
     public boolean add(Track track) {
         //// replace the following statement with your code
+        if (size >= maxSize) {
+            return false;
+        }
+        tracks[this.getSize()] = track;
+        size++;
         return true;
     }
 
@@ -43,6 +48,7 @@ class PlayList {
     //// For an efficient implementation, use StringBuilder.
     public String toString() {
         //// replace the following statement with your code
+        
         return "";
     }
 
