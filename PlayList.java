@@ -96,7 +96,25 @@ class PlayList {
      *  returns true. */
     public boolean add(int i, Track track) {
         //// replace the following statement with your code
-        return false;
+        if (i < 0 || i >= maxSize || size >= maxSize) {
+            return false;
+        }
+        if (size == 0) {
+            add(track);
+            size++;
+            return true;
+        }
+        if (i == size) {
+            add(track);
+            size++;
+            return true;
+        }
+        for (int j = size - i; j >= i; j--) {
+            tracks[j + 1] = tracks[j];
+        }
+        tracks[i] = track;
+        size++;
+        return true;
     }
      
     /** Removes the track in the given index from this list.
