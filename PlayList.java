@@ -48,8 +48,12 @@ class PlayList {
     //// For an efficient implementation, use StringBuilder.
     public String toString() {
         //// replace the following statement with your code
-        
-        return "";
+        StringBuilder answer = new StringBuilder();
+        for (int i = 0; i < size; i++) {
+            answer.append(getTrack(i));
+            answer.append("\n");
+        }
+        return answer.toString();
     }
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
