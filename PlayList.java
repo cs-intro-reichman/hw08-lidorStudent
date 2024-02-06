@@ -101,12 +101,10 @@ class PlayList {
         }
         if (size == 0) {
             add(track);
-            size++;
             return true;
         }
         if (i == size) {
             add(track);
-            size++;
             return true;
         }
         for (int j = size - i; j >= i; j--) {
@@ -115,7 +113,6 @@ class PlayList {
         tracks[i] = track;
         size++;
         return true;
-        
     }
      
     /** Removes the track in the given index from this list.
@@ -123,6 +120,18 @@ class PlayList {
      *  does nothing and returns -1. */
     public void remove(int i) {
         //// replace this comment with your code
+        if (i < 0 || i >= maxSize || size == 0) {
+            return;
+        }
+        if (i == size - 1) {
+            removeLast();
+            return;
+        }
+        for (int j = i; j <= size - i; j++) {
+            tracks[j] = tracks[j + 1];
+        }
+        tracks[size - i] = null;
+        size--;
     }
 
     /** Removes the first track that has the given title from this list.
