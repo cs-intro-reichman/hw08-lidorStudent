@@ -39,7 +39,7 @@ class PlayList {
         if (size >= maxSize) {
             return false;
         }
-        tracks[this.getSize()] = track;
+        tracks[size] = track;
         size++;
         return true;
     }
@@ -50,7 +50,7 @@ class PlayList {
         //// replace the following statement with your code
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < size; i++) {
-            answer.append(getTrack(i));
+            answer.append(getTrack(i).toString());
             answer.append("\n");
         }
         return answer.toString();
@@ -59,6 +59,10 @@ class PlayList {
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() {
         //// replace this comment with your code
+        if (size > 0) {
+            tracks[size - 1] = null;
+            size--;
+        }
     }
     
     /** Returns the total duration (in seconds) of all the tracks in this list.*/
