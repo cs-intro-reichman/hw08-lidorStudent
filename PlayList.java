@@ -146,7 +146,7 @@ class PlayList {
     /** Removes the first track from this list. If the list is empty, does nothing. */
     public void removeFirst() {
         //// replace this comment with your code
-        //remove(0);
+        remove(0);
     }
     
     /** Adds all the tracks in the other list to the end of this list. 
@@ -156,7 +156,7 @@ class PlayList {
         //// replace this comment with your code
         int index = size;
         if (size + other.getSize() <= maxSize) {
-            for (int i = 0; i < other.getSize(); i++) {
+            for (int i = 0; i < other.getSize() - 1; i++) {
                 add(index, other.getTrack(i));
                 index++;
             }
