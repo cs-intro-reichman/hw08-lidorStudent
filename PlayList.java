@@ -176,8 +176,8 @@ class PlayList {
             return -1;
         }
         shortest = tracks[start].getDuration();
-        for (int i = start; i < size - 1 ; i++) {
-            if (tracks[i].getDuration() < shortest) {
+        for (int i = start; i < size; i++) {
+            if (tracks[i].getDuration() <= shortest) {
                 shortest = tracks[i].getDuration();
             }
         }
