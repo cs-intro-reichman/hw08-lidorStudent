@@ -156,7 +156,7 @@ class PlayList {
         //// replace this comment with your code
         int index = size;
         if (size + other.getSize() <= maxSize) {
-            for (int i = 0; i < other.getSize() - 1; i++) {
+            for (int i = 0; i < other.getSize(); i++) {
                 add(index, other.getTrack(i));
                 index++;
             }
@@ -172,6 +172,7 @@ class PlayList {
     private int minIndex(int start) {
         //// replace the following statement with your code
         int shortest = 0;
+        int index = start;
         if (start < 0 || start > size - 1) {
             return -1;
         }
@@ -179,9 +180,10 @@ class PlayList {
         for (int i = start; i < size; i++) {
             if (tracks[i].getDuration() < shortest) {
                 shortest = tracks[i].getDuration();
+                index = i;
             }
         }
-        return shortest;
+        return index;
     }
 
     /** Returns the title of the shortest track in this list. 
