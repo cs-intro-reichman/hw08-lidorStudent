@@ -176,7 +176,7 @@ class PlayList {
             return -1;
         }
         shortest = tracks[start].getDuration();
-        for (int i = start; i < this.getSize(); i++) {
+        for (int i = start; i < size; i++) {
             if (tracks[i].getDuration() < shortest) {
                 shortest = tracks[i].getDuration();
             }
@@ -197,6 +197,13 @@ class PlayList {
     public void sortedInPlace() {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
-        //// replace this statement with your code
+        //// replace this statement with your code 
+        for (int i = 0; i < size - 1; i++) 
+        {  
+            int minIndex = minIndex(i); 
+            Track temp = tracks[i]; 
+            tracks[i] = tracks[minIndex]; 
+            tracks[minIndex] = temp; 
+        } 
     }
 }
